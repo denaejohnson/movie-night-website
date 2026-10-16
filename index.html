@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Movie Night: discover films, check showtimes and request tickets online.">
+  <title>Home | Movie Night</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top" aria-label="Main navigation">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">&#127916; Movie Night</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="movies.html">Movies</a></li>
+          <li class="nav-item"><a class="nav-link" href="tickets.html">Tickets</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero carousel (Bootstrap JS component #1) -->
+    <section aria-label="Featured announcements">
+      <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active hero-slide">
+            <img src="images/hero-1.svg" class="d-block w-100" alt="Purple cinema banner reading Movie Night">
+            <div class="carousel-caption d-block">
+              <div class="hero-caption d-inline-block">
+                <h1 class="display-5 fw-bold">Movie Night Is Here</h1>
+                <p class="mb-3">Big screen. Big snacks. Big memories.</p>
+                <a href="tickets.html" class="btn btn-brand btn-lg">Request tickets</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item hero-slide">
+            <img src="images/hero-2.svg" class="d-block w-100" alt="Purple cinema banner announcing new releases">
+            <div class="carousel-caption d-block">
+              <div class="hero-caption d-inline-block">
+                <h2 class="display-5 fw-bold">New Releases Every Week</h2>
+                <p class="mb-3">From action to family favourites.</p>
+                <a href="movies.html" class="btn btn-brand btn-lg">Browse all movies</a>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item hero-slide">
+            <img src="images/hero-3.svg" class="d-block w-100" alt="Purple cinema banner about group discounts">
+            <div class="carousel-caption d-block">
+              <div class="hero-caption d-inline-block">
+                <h2 class="display-5 fw-bold">Bring Your Crew</h2>
+                <p class="mb-3">Group of 5 or more? Save 10%.</p>
+                <a href="tickets.html" class="btn btn-brand btn-lg">Book for a group</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous slide</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next slide</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Statistics (numbers calculated by JavaScript from the movies array) -->
+    <section class="container py-5" aria-labelledby="statsHeading">
+      <h2 id="statsHeading" class="visually-hidden">Movie Night at a glance</h2>
+      <div class="row text-center g-4">
+        <div class="col-12 col-md-4">
+          <p class="stat-number mb-0" id="statNowShowing">0</p>
+          <p class="text-secondary mb-0">Movies now showing</p>
+        </div>
+        <div class="col-12 col-md-4">
+          <p class="stat-number mb-0" id="statGenres">0</p>
+          <p class="text-secondary mb-0">Genres to explore</p>
+        </div>
+        <div class="col-12 col-md-4">
+          <p class="stat-number mb-0" id="statRating">0</p>
+          <p class="text-secondary mb-0">Average rating out of 10</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured movies (cards created by JavaScript) -->
+    <section class="container pb-5" aria-labelledby="featuredHeading">
+      <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+        <h2 id="featuredHeading" class="section-title h1 mb-2">Top Rated Right Now</h2>
+        <a href="movies.html" class="btn btn-outline-light">See every movie</a>
+      </div>
+      <div class="row g-4" id="featuredMovies">
+        <noscript><p>Please enable JavaScript to see the featured movies.</p></noscript>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="container pb-5" aria-labelledby="howHeading">
+      <h2 id="howHeading" class="section-title h1 mb-4">How Movie Night Works</h2>
+      <div class="row g-4">
+        <div class="col-12 col-md-4">
+          <article class="card h-100 p-3">
+            <h3 class="h4">1. Discover</h3>
+            <p class="mb-0">Browse the movies page, filter by genre or search by title, and open any film to read the story and see showtimes.</p>
+          </article>
+        </div>
+        <div class="col-12 col-md-4">
+          <article class="card h-100 p-3">
+            <h3 class="h4">2. Request</h3>
+            <p class="mb-0">Fill in the ticket form, pick your seat type and date, and watch your price update as you choose.</p>
+          </article>
+        </div>
+        <div class="col-12 col-md-4">
+          <article class="card h-100 p-3">
+            <h3 class="h4">3. Enjoy</h3>
+            <p class="mb-0">Get an instant booking reference, grab your friends and enjoy the show.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ accordion (Bootstrap JS component #2) -->
+    <section class="container pb-5" aria-labelledby="faqHeading">
+      <h2 id="faqHeading" class="section-title h1 mb-4">Frequently Asked Questions</h2>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+              How much do tickets cost?
+            </button>
+          </h3>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">Standard tickets range from J$1,400 to J$2,000 depending on the movie. VIP seats add J$1,000 per ticket.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+              Are there any discounts?
+            </button>
+          </h3>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">Yes! Every Tuesday is 20% off, and groups of 5 or more tickets save an extra 10%. The two discounts can be combined.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+              Can I book a movie that is coming soon?
+            </button>
+          </h3>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">Not yet. Coming soon titles appear on the movies page so you can read about them, but tickets open once they are showing.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+              How many tickets can I request at once?
+            </button>
+          </h3>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">You can request between 1 and 10 tickets in a single booking.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <button type="button" id="backToTop" class="btn btn-brand rounded-circle" aria-label="Back to top">&uarr;</button>
+
+  <footer class="py-4 mt-5">
+    <div class="container">
+      <div class="row gy-3 align-items-center">
+        <div class="col-md-6">
+          <p class="mb-0 fw-bold">&#127916; Movie Night</p>
+          <p class="mb-0 small text-secondary">A student project for Dynamic Websites and Applications, VTDI. All films and posters are fictional.</p>
+        </div>
+        <div class="col-md-6">
+          <ul class="nav justify-content-md-end">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="movies.html">Movies</a></li>
+            <li class="nav-item"><a class="nav-link" href="tickets.html">Tickets</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
